@@ -1,10 +1,13 @@
+import { Box, Typography } from "@mui/material";
 import { FC } from "react";
 
 const Header: FC = () => {
   return (
-    <header>
-      <h1>Welcome to Task Management Boards</h1>{" "}
-    </header>
+    <Box sx={{ maxHeight: "100%" }}>
+      <header>
+        <Typography sx={{ fontSize: "40px" }}>Testing Tasks Board</Typography>{" "}
+      </header>
+    </Box>
   );
 };
 export default Header;

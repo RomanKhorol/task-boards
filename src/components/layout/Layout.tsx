@@ -1,17 +1,23 @@
 import { FC, Suspense } from "react";
-import { NavLink, Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import { Outlet } from "react-router-dom";
+import { Box } from "@mui/material";
 const Layout: FC = () => {
   return (
-    <div>
-      <Header />
-      <NavLink></NavLink>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Outlet />
-      </Suspense>
-      <Footer />
-    </div>
+    <Box>
+      <header>
+        <Header />
+      </header>
+      <main>
+        <Suspense fallback={<div>Loading page...</div>}>
+          <Outlet />
+        </Suspense>
+      </main>
+      <footer>
+        <Footer />
+      </footer>
+    </Box>
   );
 };
 export default Layout;
